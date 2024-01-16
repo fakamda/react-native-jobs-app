@@ -20,6 +20,8 @@ import {
 import { COLORS, icons, SIZES } from '../../constants'
 import useFetch from '../../hooks/useFetch'
 
+const tabs = ["About", "Qualifications", "Responsabilities"]
+
 const JobDetails = () => {
   const params = useGlobalSearchParams()
   const router = useRouter()
@@ -30,6 +32,7 @@ const JobDetails = () => {
   })
 
   const [refreshing, setRefreshing] = useState(false)
+  const [activeTab, setActiveTab] = useState(tabs[0])
 
   const onRefresh = () => {
 
